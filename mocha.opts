@@ -1,1 +1,1 @@
--r ts-node/register -R spec src/**/*.spec.ts -i
+-r ts-node/register -R spec src/**/*.spec.ts

@@ -3,48 +3,25 @@ import { expect } from 'chai';
 import { Day1Step2 } from '.';
 
 describe('day-01-s1', () => {
-    let day1Step2 = new Day1Step2();
-    before(() => {
-    });
+    let day = new Day1Step2();
 
     it('1212 produces 6: the list contains 4 items, and all four digits match the digit 2 items ahead.', () => {
-        // Act
-        let result = day1Step2.execute('1212');
-        // Assert
-        expect(result).to.be.equal(6);
+        expect(day.execute('1212')).to.be.equal(6);
     });
-
     it('1221 produces 0, because every comparison is between a 1 and a 2.', () => {
-        // Act
-        let result = day1Step2.execute('1221');
-        // Assert
-        expect(result).to.be.equal(0);
+        expect(day.execute('1221')).to.be.equal(0);
     });
-
     it('123425 produces 4, because both 2s match each other, but no other digit has a match.', () => {
-        // Act
-        let result = day1Step2.execute('123425');
-        // Assert
-        expect(result).to.be.equal(4);
+        expect(day.execute('123425')).to.be.equal(4);
     });
-
     it('123123 produces 12.', () => {
-        // Act
-        let result = day1Step2.execute('123123');
-        // Assert
-        expect(result).to.be.equal(12);
+        expect(day.execute('123123')).to.be.equal(12);
     });
-
     it('12131415 produces 4.', () => {
-        // Act
-        let result = day1Step2.execute('12131415');
-        // Assert
-        expect(result).to.be.equal(4);
+        expect(day.execute('12131415')).to.be.equal(4);
     });
-
     it('step 2 input produce 1284.', (done) => {
-        // Act
-        day1Step2.run('assets/day-01/input.txt').subscribe(result => {
+        day.run('assets/day-01/input.txt').subscribe(result => {
             expect(result).to.be.equal(1284);
             done();
         });
