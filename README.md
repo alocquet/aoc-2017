@@ -1,4 +1,4 @@
-# Soluces - Advent of code 2016
+# Soluces - Advent of code 2017
 
 [![Build Status](https://travis-ci.org/alocquet/aoc-2017.svg?branch=master)](https://travis-ci.org/alocquet/aoc-2017)
 
