@@ -1,4 +1,4 @@
-import { Day5 } from "..";
+import { Day5 } from '..';
 
 export class Day5Step2 extends Day5 {
 

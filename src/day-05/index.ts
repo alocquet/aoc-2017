@@ -1,4 +1,4 @@
-import { Day } from "../day";
+import { Day } from '../day';
 
 export abstract class Day5 extends Day<number> {
 

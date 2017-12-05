@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "graceful-fs": "4.1.11",
-    "rxjs": "^5.5.2"
+    "rxjs": "^5.5.2",
+    "tslint": "^5.8.0"
   }
 }

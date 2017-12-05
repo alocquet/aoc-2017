@@ -1,4 +1,4 @@
-import { Day } from "../day";
+import { Day } from '../day';
 
 export abstract class Day2 extends Day<number> {
 
@@ -11,5 +11,5 @@ export abstract class Day2 extends Day<number> {
         return this.checksum(digits);
     }
 
-    abstract checksum(line: number[]): number
+    abstract checksum(line: number[]): number;
 }
