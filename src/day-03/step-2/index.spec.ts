@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { Day3Step2 } from '.';
 
 describe('day-03-s2', () => {
-    let day = new Day3Step2();
+    const day = new Day3Step2();
 
     it('10 is the first value upper than 8.', () => {
         expect(day.execute(8)).to.be.equal(10);

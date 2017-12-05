@@ -2,8 +2,8 @@ import { expect } from 'chai';
 
 import { Day1Step2 } from '.';
 
-describe('day-01-s1', () => {
-    let day = new Day1Step2();
+describe('day-01-s2', () => {
+    const day = new Day1Step2();
 
     it('1212 produces 6: the list contains 4 items, and all four digits match the digit 2 items ahead.', () => {
         expect(day.execute('1212')).to.be.equal(6);
@@ -21,7 +21,7 @@ describe('day-01-s1', () => {
         expect(day.execute('12131415')).to.be.equal(4);
     });
     it('step 2 input produce 1284.', (done) => {
-        day.run('assets/day-01/input.txt').subscribe(result => {
+        day.run('assets/day-01/input.txt').subscribe((result) => {
             expect(result).to.be.equal(1284);
             done();
         });

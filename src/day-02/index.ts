@@ -2,14 +2,14 @@ import { Day } from '../day';
 
 export abstract class Day2 extends Day<number> {
 
-    execute(input: string): number {
-        return input.split('\n').map(line => this.checksumLine(line)).reduce((res, elt) => res + elt, 0);
+    public execute(input: string): number {
+        return input.split('\n').map((line) => this.checksumLine(line)).reduce((res, elt) => res + elt, 0);
     }
 
-    checksumLine(line: String): number {
-        let digits = line.split(/\s+/).map(elt => parseInt(elt));
+    public checksumLine(line: string): number {
+        const digits = line.split(/\s+/).map((elt) => parseInt(elt, 10));
         return this.checksum(digits);
     }
 
-    abstract checksum(line: number[]): number;
+    public abstract checksum(line: number[]): number;
 }
