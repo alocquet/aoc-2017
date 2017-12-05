@@ -7,7 +7,7 @@ export abstract class Day2 extends Day<number> {
     }
 
     public checksumLine(line: string): number {
-        const digits = line.split(/\s+/).map((elt) => parseInt(elt, 10));
+        let digits = line.split(/\s+/).map((elt) => parseInt(elt, 10));
         return this.checksum(digits);
     }
 

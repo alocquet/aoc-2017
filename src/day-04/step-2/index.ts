@@ -4,7 +4,7 @@ export class Day4Step2 extends Day4 {
 
     public valid(line: string): boolean {
         // order pass words and use algo from step 1
-        const orderedPasswords = line.split(' ')
+        let orderedPasswords = line.split(' ')
             .map((word) => word.split('').sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0)).join('')).join(' ');
         return super.valid(orderedPasswords);
     }

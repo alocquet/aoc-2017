@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { Day4Step1 } from '.';
 
 describe('day-04-s1', () => {
-    const day = new Day4Step1();
+    let day = new Day4Step1();
 
     it('aa bb cc dd ee is valid.', () => {
         expect(day.valid('aa bb cc dd ee')).to.be.equal(true);

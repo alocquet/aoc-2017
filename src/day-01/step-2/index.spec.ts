@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { Day1Step2 } from '.';
 
 describe('day-01-s2', () => {
-    const day = new Day1Step2();
+    let day = new Day1Step2();
 
     it('1212 produces 6: the list contains 4 items, and all four digits match the digit 2 items ahead.', () => {
         expect(day.execute('1212')).to.be.equal(6);

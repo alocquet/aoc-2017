@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { Day2Step2 } from '.';
 
 describe('day-02-s2', () => {
-    const day = new Day2Step2();
+    let day = new Day2Step2();
 
     it('In the first row, the only two numbers that evenly divide are 8 and 2;'
         + ' the result of this division is 4.', () => {

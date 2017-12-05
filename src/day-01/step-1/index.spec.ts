@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { Day1Step1 } from '.';
 
 describe('day-01-s1', () => {
-    const day = new Day1Step1();
+    let day = new Day1Step1();
 
     it('1122 produces a sum of 3 (1 + 2) because the first digit (1) matches the second digit '
         + 'and the third digit (2) matches the fourth digit.', () => {

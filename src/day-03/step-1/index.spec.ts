@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { Day3Step1 } from '.';
 
 describe('day-03-s1', () => {
-    const day = new Day3Step1();
+    let day = new Day3Step1();
 
     it('Data from square 1 is carried 0 steps, since it\'s at the access port.', () => {
         expect(day.execute(1)).to.be.equal(0);

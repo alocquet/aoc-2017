@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { Day4Step2 } from '.';
 
 describe('day-04-s2', () => {
-    const day = new Day4Step2();
+    let day = new Day4Step2();
 
     it('abcde fghij is a valid passphrase.', () => {
         expect(day.valid('abcde fghij')).to.be.equal(true);

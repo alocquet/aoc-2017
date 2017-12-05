@@ -8,7 +8,8 @@
         "quotemark": [
             true,
             "single"
-        ]
+        ],
+        "prefer-const": false
     },
     "rulesDirectory": []
 }
