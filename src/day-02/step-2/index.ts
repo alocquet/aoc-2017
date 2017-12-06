@@ -9,6 +9,5 @@ export class Day2Step2 extends Day2 {
                 return Math.max(secondDigit, digit) / Math.min(secondDigit, digit);
             }
         }
-        return 0;
     }
 }
