@@ -19,7 +19,7 @@
   "homepage": "https://github.com/alocquet/aoc-2017#readme",
   "config": {
     "mocha-sonar-reporter": {
-      "outputfile": "reports/tests.xml"
+      "outputfile": "reports/Test-all.xml"
     }
   },
   "nyc": {
