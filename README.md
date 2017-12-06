@@ -1,6 +1,8 @@
 # Soluces - Advent of code 2017
 
 [![Build Status](https://travis-ci.org/alocquet/aoc-2017.svg?branch=master)](https://travis-ci.org/alocquet/aoc-2017)
+[![Quality Gate](https://sonarcloud.io/api/badges/gate?key=alocquet.aoc-2017)](https://sonarcloud.io/dashboard/index/alocquet.aoc-2017)
+[![Coverage](https://sonarcloud.io/api/badges/coverage?key=alocquet.aoc-2017)](https://sonarcloud.io/dashboard/index/alocquet.aoc-2017)
 
 Soluces for Advent of code 2017 written with TypeScript and mocha tests.
 
