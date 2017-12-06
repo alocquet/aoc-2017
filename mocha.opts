@@ -1,1 +1,1 @@
--r ts-node/register -R spec src/**/*.spec.ts
+-r ts-node/register --reporter mocha-multi-reporters --reporter-options configFile=mochaconfig.json src/**/*.spec.ts
