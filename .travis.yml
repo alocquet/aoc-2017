@@ -8,8 +8,6 @@ node_js:
 addons:
   sonarcloud:
     organization: "alocquet-github"
-    token:
-      secure: CqEqvToj60+U4dIfVNzgtgYcs1IU/2KZzrpcL20ljjXXrDqe/3L5F4hLhN4HkE+vRiSiWkigVJ/AGs2oSiVUTFldvaVJpcl91PujPLnmu/yB83rdd/lRYHoAsfyzF4yJukDG3TB3r89q61mayeyuyxTKETPyM6L9l7PKR7EV1FhFqea95v/IYWil5qt/tSTZSmyz6x/VX2SasTWvx+noCK9EUu+WgvUdFaeSIYHdof10acgNV5InJAQ4ccWvCCzCxvdQAy2sL0vA55WfafzhiFMhyajIqaRPwpC4b5LBMp50ZNZN8i3HnPtmuFzST31cAn8EY1nvq0Yf55HpC5x1iv8p7EKTpK86BH/tLh14ixgoqA9qs82awlK/AetwWnEsFgPvhwo+0zk5/71kE9O945/pixafOHES3PPSfnJsU9/j4TULxD4kJ8ALb1LfZQ/6+juBe66rlR4LT77xdvoTuZ27dJTPnThmhPXNpRG2UF52a+ZYoyudOwQzj6JXNW/hmji+3SoRAwElXDaj2ZTVjNg5NED+6fU7eAnUdbK6Or401GpQXJ9JIitLYmr47RVKoh1cNxAZBjpJf4g5LCpxGLwUzb/z/882H+RE5Hc66VndSTATv2EAcMHq4744fW/61lXplpKj4e4pl1w8quo8X8oG7ZVeiXvhl/sfZ8FWODk=
 script:
   - npm test
   - sonar-scanner
