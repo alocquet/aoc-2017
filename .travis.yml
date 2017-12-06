@@ -1,3 +1,18 @@
+dist: trusty
+sudo: required
+
 language: node_js
 node_js:
   - "8"
+
+addons:
+  sonarcloud:
+    organization: "alocquet-github"
+    token:
+      secure: "6zdLLRXfGx8yipnUq18gWJRa8dFMgI8lY9WkLmmNBhe7JhfNJYcay3nUw7iI1bh5PTWaC5GTAtR8zkfD7rF4qTbI6K2r5fa1d9CHzpcaoCEZDrTmYTHwVFlKnzI/lbOZf47VBsFLMQ6zMd3Fo5VsSO/gbSb6gKgTtuWUOmBQHqCqqOGuz3vwbcpEY6E+C1wKXCkf7SZ/IsSAD4JkK1I4zg5XMajv87DLTyl/gwzb2bjLGLIB1vQDc9CyxKDGCPWPlXzL4gvaJvSaLRJtxjzzwmL49a3u+h+jRrqbkfqzOpFawATL0nAv/YdIWV8KubF4Csz98htmCISZ+IcNcDx6R1B4MgaVZqRPKX3oc66LqeBlTKCtHqiMHNFrM33fyy27LdfjwzrS4gDK3PSuMR+iw7AKTCmhQ6AIuLZLk7FcbS3igVIhiC+NMtJ398vBeVcxfhGIqKJ9VefRHlaogisN1jW3osTTDs92NFtUva0dNGzQ+MBoxe25uyN+9XyRZ3xUAdBdcyfbGqwqaQkVw84mtTqhaZu55JuLNGQO2ZGcb2P3mYY9Y6s4V4pvex1ji28pKkRvoE3DszBfDXAPytipIB8Ijc0kp7SWBtWI190iAR2TyzYA853qiS76IKF/XVP+5N1CRiqdgGHEbzYG0CsmHfcA8WVONSM0m1Ba/835P6A="
+script:
+  - sonar-scanner
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
+    - node_modules
