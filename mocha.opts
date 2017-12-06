@@ -1,1 +1,5 @@
--r ts-node/register --reporter mocha-multi-reporters --reporter-options configFile=mochaconfig.json src/**/*.spec.ts
+-r ts-node/register --reporter mocha-multi-reporters --reporter-options configFile=mochaconfig.json 
+--require ts-node/register
+--require source-map-support/register
+--recursive
+src/**/*.spec.ts
