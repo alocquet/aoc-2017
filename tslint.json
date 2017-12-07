@@ -9,7 +9,8 @@
             true,
             "single"
         ],
-        "prefer-const": false
+        "prefer-const": false,
+        "max-classes-per-file": -1
     },
     "rulesDirectory": []
 }
