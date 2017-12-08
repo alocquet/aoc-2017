@@ -5,7 +5,7 @@ export abstract class Day8 extends Day<number> {
     public executeSteps(input: string): { max: number, finalMax: number } {
         let result: any = {};
         let variables = new Map<string, number>();
-        input.split('\n').map((line) => new D8Instruction(line))
+        let instructions = input.split('\n').map((line) => new D8Instruction(line))
             .forEach((instr) => {
                 if (instr.condition.isTrue(this.getValue(variables, instr.condition.variable))) {
                     let newValue = this.getValue(variables, instr.variable) + instr.value;
@@ -57,6 +57,13 @@ export class D8Condition {
     }
 
     public isTrue(variableValue: number) {
-        return eval(variableValue + this.operator + this.value);
+        switch (this.operator) {
+            case '<': return (variableValue < this.value);
+            case '<=': return (variableValue <= this.value);
+            case '>': return (variableValue > this.value);
+            case '>=': return (variableValue >= this.value);
+            case '==': return (variableValue === this.value);
+            case '!=': return (variableValue !== this.value);
+        }
     }
 }
