@@ -4,17 +4,17 @@ export abstract class Day8 extends Day<number> {
 
     public executeSteps(input: string): { max: number, finalMax: number } {
         let result: any = {};
-        let instructions = input.split('\n').map((line) => new D8Instruction(line));
         let variables = new Map<string, number>();
-        instructions.forEach((instr) => {
-            if (instr.condition.isTrue(this.getValue(variables, instr.condition.variable))) {
-                let newValue = this.getValue(variables, instr.variable) + instr.value;
-                if (result.max === undefined || result.max < newValue) {
-                    result.max = newValue;
+        input.split('\n').map((line) => new D8Instruction(line))
+            .forEach((instr) => {
+                if (instr.condition.isTrue(this.getValue(variables, instr.condition.variable))) {
+                    let newValue = this.getValue(variables, instr.variable) + instr.value;
+                    if (result.max === undefined || result.max < newValue) {
+                        result.max = newValue;
+                    }
+                    variables.set(instr.variable, newValue);
                 }
-                variables.set(instr.variable, newValue);
-            }
-        });
+            });
         result.finalMax = Math.max.apply(Math.max, Array.from(variables.values()));
         return result;
     }
