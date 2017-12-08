@@ -57,13 +57,6 @@ export class D8Condition {
     }
 
     public isTrue(variableValue: number) {
-        switch (this.operator) {
-            case '<': return (variableValue < this.value);
-            case '<=': return (variableValue <= this.value);
-            case '>': return (variableValue > this.value);
-            case '>=': return (variableValue >= this.value);
-            case '==': return (variableValue === this.value);
-            case '!=': return (variableValue !== this.value);
-        }
+        return eval(variableValue + this.operator + this.value);
     }
 }

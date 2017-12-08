@@ -10,7 +10,8 @@
             "single"
         ],
         "prefer-const": false,
-        "max-classes-per-file": -1
+        "max-classes-per-file": -1,
+        "no-eval": false
     },
     "rulesDirectory": []
 }
