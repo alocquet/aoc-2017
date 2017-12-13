@@ -7,8 +7,8 @@ export class Day13Step2 extends Day13 {
         let time = 0;
         let caughtPositions;
         do {
-            // Brute Force :D
-            caughtPositions = this.getCaughtPositions(layers, time++, maxLayer);
+            // Brute Force :D ... but break algo immediatly when we are caught
+            caughtPositions = this.getCaughtPositions(layers, time++, maxLayer, true);
         } while (caughtPositions.length > 0);
         return time - 1;
     }

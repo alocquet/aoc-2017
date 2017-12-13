@@ -16,7 +16,7 @@ export abstract class Day13 extends Day<number> {
         return { layers, maxLayer };
     }
 
-    public getCaughtPositions(layers: Map<number, number>, startTime: number, maxLayer: number) {
+    public getCaughtPositions(layers: Map<number, number>, startTime: number, maxLayer: number, breakOnCaught = false) {
         let caughtPositions = [];
         for (let time = startTime; time < startTime + maxLayer + 1; time++) {
             let layerDepth = layers.get(time - startTime);
@@ -24,6 +24,9 @@ export abstract class Day13 extends Day<number> {
                 let position = this.getScannerPosition(layerDepth, time);
                 if (position === 0) {
                     caughtPositions.push(time - startTime);
+                    if (breakOnCaught) {
+                        return caughtPositions;
+                    }
                 }
             }
         }
