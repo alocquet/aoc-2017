@@ -14,9 +14,9 @@ export class Day14Step2 extends Day14 {
                         // no groups : create a new groupe
                         groups.push([this.stringRepresentation(x, y)]);
                     } else {
-                        let keepGroupId = inGroups.shift();
+                        let keepGroupId = inGroups.pop();
                         // join groups
-                        for (let groupId of inGroups.reverse()) {
+                        for (let groupId of inGroups) {
                             [].push.apply(groups[keepGroupId], groups[groupId]);
                             groups.splice(groupId, 1);
                         }
@@ -30,15 +30,15 @@ export class Day14Step2 extends Day14 {
     }
 
     /**
-     * get ids of groups where x,y is.
+     * get ids of groups where x,y is. ids are sorted desc.
      */
     public getGroupIds(groups: string[][], x: number, y: number): number[] {
         let result = [];
         for (let groupId = 0; groupId < groups.length; groupId++) {
             let neightboorInGroup = this.getNeightboors(x, y)
-                .find((neightboor) => groups[groupId].indexOf(neightboor) !== -1);
-            if (neightboorInGroup !== undefined) {
-                result.push(groupId);
+                .some((neightboor) => groups[groupId].indexOf(neightboor) !== -1);
+            if (neightboorInGroup) {
+                result.unshift(groupId);
             }
         }
         return result;
