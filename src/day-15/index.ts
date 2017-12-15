@@ -4,8 +4,8 @@ import { Day10Step2 } from '../day-10/step-2';
 export abstract class Day15 {
 
     public static config = {
-        a: { factor: 16807, modulo: 4 },
-        b: { factor: 48271, modulo: 8 },
+        a: { factor: 16807, modulo: 3 },
+        b: { factor: 48271, modulo: 7 },
     };
 
     public execute(genAStart: number, genBStart: number, iterations: number): number {

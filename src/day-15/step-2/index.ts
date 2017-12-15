@@ -6,7 +6,7 @@ export class Day15Step2 extends Day15 {
         let result = a;
         do {
             result = result * config.factor % 2147483647;
-        } while (result % config.modulo !== 0);
+        } while (result & config.modulo);
         return result;
     }
 
