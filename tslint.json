@@ -11,7 +11,8 @@
         ],
         "prefer-const": false,
         "max-classes-per-file": false,
-        "no-bitwise": false
+        "no-bitwise": false,
+        "interface-name": false
     },
     "rulesDirectory": []
 }
