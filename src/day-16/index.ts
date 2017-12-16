@@ -25,9 +25,7 @@ export class D16InstructionFactory {
 export class D16Spin {
     public static parse(input: string): D16Spin {
         let values = D16Spin.regex.exec(input);
-        if (values) {
-            return new D16Spin(parseInt(values[1], 10));
-        }
+        return values && new D16Spin(parseInt(values[1], 10));
     }
     private static regex = /s(\d+)/;
     constructor(public factor: number) { }
@@ -40,9 +38,7 @@ export class D16Spin {
 export class D16Exchange {
     public static parse(input: string): D16Exchange {
         let values = D16Exchange.regex.exec(input);
-        if (values) {
-            return new D16Exchange(parseInt(values[1], 10), parseInt(values[2], 10));
-        }
+        return values && new D16Exchange(parseInt(values[1], 10), parseInt(values[2], 10));
     }
     private static regex = /x(\d+)\/(\d+)/;
     constructor(public idA: number, public idB: number) {
@@ -53,9 +49,6 @@ export class D16Exchange {
     }
 
     public execute(state: string): string {
-        if (this.idA === this.idB) {
-            return state;
-        }
         return state.substring(0, this.idA)
             + state.charAt(this.idB)
             + ((this.idA === this.idB - 1) ? '' : state.substring(this.idA + 1, this.idB))
@@ -67,9 +60,7 @@ export class D16Exchange {
 export class D16Partner {
     public static parse(input: string): D16Partner {
         let values = D16Partner.regex.exec(input);
-        if (values) {
-            return new D16Partner(values[1], values[2]);
-        }
+        return values && new D16Partner(values[1], values[2]);
     }
     private static regex = /p(\w)\/(\w)/;
     constructor(public progA: string, public progB: string) { }
