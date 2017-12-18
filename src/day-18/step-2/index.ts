@@ -20,7 +20,7 @@ export class Day18Step2 extends Day18 {
         let context2 = new D18ExecutionContext();
         context1.send = context2.receive;
         context2.send = context1.receive;
-        context1.registers.set('p', 0);
+        context2.registers.set('p', 0);
         context1.registers.set('p', 1);
         let currentContext = context1;
         while (this.executeProg(instructions, context1) || this.executeProg(instructions, context2)) {
