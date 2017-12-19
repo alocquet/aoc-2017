@@ -13,20 +13,12 @@ export abstract class Day19 extends Day<string | number> {
                 case '|': case '-':
                     break;
                 case '+':
-                    if (direction.x === 0) {
-                        let before = this.getValue(path, { x: position.x - 1, y: position.y });
-                        if (before !== ' ' && before !== '+') {
-                            direction = { x: -1, y: 0 };
-                        } else {
-                            direction = { x: 1, y: 0 };
-                        }
+                    // invert direction axis (vert/horiz), test first neightboor and set direction
+                    let neightboor = this.getValue(path, { x: position.x + direction.y, y: position.y + direction.x });
+                    if (neightboor && neightboor !== ' ' && neightboor !== '+') {
+                        direction = { x: direction.y, y: direction.x };
                     } else {
-                        let before = this.getValue(path, { x: position.x, y: position.y - 1 });
-                        if (before !== ' ' && before !== '+') {
-                            direction = { x: 0, y: -1 };
-                        } else {
-                            direction = { x: 0, y: 1 };
-                        }
+                        direction = { x: -direction.y, y: -direction.x };
                     }
                     break;
                 default:
@@ -39,6 +31,7 @@ export abstract class Day19 extends Day<string | number> {
         return { steps, phrase };
     }
 
+
     public getValue(path: string[][], position: D19Position): string {
         return position.x >= 0 && position.y >= 0
             && position.y < path.length && position.x < path[position.y].length
@@ -46,7 +39,8 @@ export abstract class Day19 extends Day<string | number> {
     }
 
     public isFinished(path: string[][], position: D19Position) {
-        return this.getValue(path, position) === ' ';
+        let value = this.getValue(path, position);
+        return !value || this.getValue(path, position) === ' ';
     }
 
 }

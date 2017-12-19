@@ -4,7 +4,8 @@
   "description": "Advent of code 2017",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha --opts mocha.opts",
+    "test": "mocha --opts mocha.opts",
+    "coverage": "nyc mocha --opts mocha.opts",
     "watch": "npm test -- -w --watch-extensions ts"
   },
   "repository": {
@@ -51,6 +52,7 @@
   },
   "dependencies": {
     "graceful-fs": "4.1.11",
+    "napajs": "^0.1.7",
     "rxjs": "^5.5.2",
     "tslint": "^5.8.0"
   }

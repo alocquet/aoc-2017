@@ -9,7 +9,7 @@ addons:
   sonarcloud:
     organization: "alocquet-github"
 script:
-  - npm test
+  - npm run coverage
   - sonar-scanner
 cache:
   directories:
