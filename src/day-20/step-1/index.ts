@@ -8,13 +8,8 @@ export class Day20Step1 extends Day20 {
         let previousClosestParticleCount = 0;
         while (true) {
             particles.forEach((particle) => particle.nextState());
-            let closestParticule = particles.reduce((closest, current) => {
-                if (closest.distanceFromOrigin() <= current.distanceFromOrigin()) {
-                    return closest;
-                } else {
-                    return current;
-                }
-            });
+            let closestParticule = particles.reduce((closest, current) =>
+                closest.distanceFromOrigin() <= current.distanceFromOrigin() ? closest : current);
             if (previousClosestParticle === closestParticule) {
                 previousClosestParticleCount++;
             } else {
