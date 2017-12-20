@@ -9,21 +9,20 @@ export abstract class Day19 extends Day<string | number> {
         let phrase = '';
         let steps = 0;
         while (!this.isFinished(path, position)) {
-            switch (path[position.y][position.x]) {
-                case '|': case '-':
-                    break;
-                case '+':
-                    // invert direction axis (vert/horiz), test first neightboor and set direction
-                    let neightboor = this.getValue(path, { x: position.x + direction.y, y: position.y + direction.x });
-                    if (neightboor && neightboor !== ' ' && neightboor !== '+') {
-                        direction = { x: direction.y, y: direction.x };
-                    } else {
-                        direction = { x: -direction.y, y: -direction.x };
-                    }
-                    break;
-                default:
-                    phrase += this.getValue(path, position);
+            let current = path[position.y][position.x];
+            if (current === '+') {
+                // invert direction axis (vert/horiz), test first neightboor and set direction
+                let neightboor = this.getValue(path, { x: position.x + direction.y, y: position.y + direction.x });
+                if (neightboor && neightboor !== ' ' && neightboor !== '+') {
+                    direction = { x: direction.y, y: direction.x };
+                } else {
+                    direction = { x: -direction.y, y: -direction.x };
+                }
+            } else if (current !== '|' && current !== '-') {
+                // it is a letter
+                phrase += this.getValue(path, position);
             }
+            // upgrade position
             position.x += direction.x;
             position.y += direction.y;
             steps++;
