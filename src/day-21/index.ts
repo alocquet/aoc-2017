@@ -90,11 +90,11 @@ export class D21Pattern {
 
     constructor(input: string) {
         let values = D21Pattern.regex.exec(input);
-        this.from = this.extractAllRotations(new D21Grid(values[1]));
+        this.from = this.extractAllRotationsAndFlips(new D21Grid(values[1]));
         this.to = new D21Grid(values[2]);
     }
 
-    private extractAllRotations(matrix: D21Grid): string[] {
+    private extractAllRotationsAndFlips(matrix: D21Grid): string[] {
         let rotations = [matrix, new D21Grid(), new D21Grid(), new D21Grid()];
         let size = matrix.size;
 
@@ -123,4 +123,5 @@ export class D21Pattern {
 
         return [...rotations, ...flips].map((result) => result.toString());
     }
+
 }
