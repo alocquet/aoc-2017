@@ -11,7 +11,7 @@ export class Day22Step2 extends Day22 {
         let coord = this.coordString(position.x, position.y);
         let dir = Day22.directions[position.dir];
         switch (nodes.get(coord)) {
-            case D22State.CLEAN: case undefined:
+            case undefined:
                 position.dir = dir.left;
                 nodes.set(coord, D22State.WEAKENED);
                 break;

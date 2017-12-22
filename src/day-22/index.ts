@@ -48,7 +48,6 @@ export abstract class Day22 extends Day<number> {
 }
 
 export enum D22State {
-    CLEAN,
     WEAKENED,
     INFECTED,
     FLAGGED,
