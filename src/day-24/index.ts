@@ -6,7 +6,7 @@ export abstract class Day24 extends Day<number> {
         return input.split('\n').map((line, id) => new D24Component(id, line));
     }
 
-    protected computeValidBridges(from: number, components: D24Component[]): D24Component[][] {
+    protected computeValidBridges(from: number, components: D24Component[]): Bridge[] {
         let result = [];
         for (let idx = 0; idx < components.length; idx++) {
             let component = components[idx];
@@ -16,10 +16,11 @@ export abstract class Day24 extends Day<number> {
                 otherComponents.splice(idx, 1);
                 for (let bridge of
                     this.computeValidBridges(component.ports[(port + 1) % 2], otherComponents)) {
-                    bridge.unshift(component);
+                    bridge.length++;
+                    bridge.strength += component.strength;
                     result.push(bridge);
                 }
-                result.push([component]);
+                result.push({ strength: component.strength, length: 1 });
             }
         }
         return result;
@@ -39,4 +40,9 @@ export class D24Component {
     public get strength() {
         return this.ports[0] + this.ports[1];
     }
+}
+
+interface Bridge {
+    strength: number;
+    length: number;
 }

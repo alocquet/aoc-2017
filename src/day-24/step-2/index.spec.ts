@@ -17,7 +17,7 @@ describe('day-24-s2', () => {
     });
 
     it('With input, the strength of the longest bridge is 1642.', function(done) {
-        this.timeout(20000);
+        this.timeout(5000);
         day.run('assets/day-24/input.txt').subscribe((result) => {
             expect(result).to.be.equal(1642);
             done();
