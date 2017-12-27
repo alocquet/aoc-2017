@@ -6,7 +6,7 @@ export abstract class Day24 extends Day<number> {
         return input.split('\n').map((line, id) => new D24Component(id, line));
     }
 
-    protected computeValidBridges(from: number, components: D24Component[]): Bridge[] {
+    protected computeValidBridges(from: number, components: D24Component[], useLength = false): Bridge {
         let result = [];
         for (let idx = 0; idx < components.length; idx++) {
             let component = components[idx];
@@ -14,16 +14,26 @@ export abstract class Day24 extends Day<number> {
             if (port !== -1) {
                 let otherComponents = [...components];
                 otherComponents.splice(idx, 1);
-                for (let bridge of
-                    this.computeValidBridges(component.ports[(port + 1) % 2], otherComponents)) {
-                    bridge.length++;
-                    bridge.strength += component.strength;
-                    result.push(bridge);
+                let validBridge = this.computeValidBridges(component.ports[(port + 1) % 2]
+                    , otherComponents, useLength);
+
+                if (validBridge !== undefined) {
+                    validBridge.length++;
+                    validBridge.strength += component.strength;
+                    result.push(validBridge);
                 }
                 result.push({ strength: component.strength, length: 1 });
             }
         }
-        return result;
+        if (result.length === 0) {
+            return undefined;
+        }
+        return result.reduce((a, b) => {
+            if (!useLength || a.length === b.length) {
+                return (a.strength >= b.strength) ? a : b;
+            }
+            return (a.length > b.length) ? a : b;
+        });
     }
 
 }
