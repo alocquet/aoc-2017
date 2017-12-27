@@ -30,8 +30,7 @@ In state B:
         - Continue with state A.`)).to.be.equal(3);
     });
 
-    it('With input, the max strength is 3732.', function(done) {
-        this.timeout(5000);
+    it('With input, the max strength is 3732.', (done) => {
         day.run('assets/day-25/input.txt').subscribe((result) => {
             expect(result).to.be.equal(3732);
             done();
