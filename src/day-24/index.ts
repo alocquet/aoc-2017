@@ -6,7 +6,7 @@ export abstract class Day24 extends Day<number> {
         return input.split('\n').map((line, id) => new D24Component(id, line));
     }
 
-    protected computeValidBridges(from: number, components: D24Component[], useLength = false): Bridge {
+    protected computeValidBridges(from: number, components: D24Component[], useLength: boolean): Bridge {
         let result = [];
         for (let idx = 0; idx < components.length; idx++) {
             let component = components[idx];
